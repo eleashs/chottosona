@@ -178,7 +178,7 @@ if(!n||!/^01\d{9}$/.test(ph)||pw.length<6)return toast('নাম, মোবা�
 if(au){try{const c=await au.createUserWithEmailAndPassword(ph+'@chottosona.shop',pw);await db.collection('users').doc(c.user.uid).set({n,ph,a});users[c.user.uid]={n,ph,a};sess=c.user.uid;user={n,ph,a};toast('অ্যাকাউন্ট তৈরি হয়েছে ✓');acct()}catch(e){toast('এই নম্বরে অ্যাকাউন্ট আছে')}return}
 if(users[ph])return toast('এই নম্বরে অ্যাকাউন্ট আছে');
 users[ph]={n,ph,a,pw};W('bus',users);sess=ph;W('bs',sess);user={n,ph,a};W('bu',user);toast('অ্যাকাউন্ট তৈরি হয়েছে ✓');acct()}
-const FB_CFG=null,ADMIN_EMAIL='admin@example.com';
+const FB_CFG={apiKey:"AIzaSyDiVvGCY-YkD67lnpQszHtERPIAdbLMSbU",authDomain:"chottosona-274e0.firebaseapp.com",projectId:"chottosona-274e0",storageBucket:"chottosona-274e0.firebasestorage.app",messagingSenderId:"504261828419",appId:"1:504261828419:web:5cdc8170f414bd3cbb99f6"},ADMIN_EMAIL='eleahs.molla@gmail.com';
 let db=null,au=null,msgs=L('bm',[]);
 try{if(FB_CFG&&window.firebase){firebase.initializeApp(FB_CFG);db=firebase.firestore();au=firebase.auth()}}catch(e){}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
